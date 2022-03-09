@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <td>Amount</td>
+                <td>Fromcurrency</td>
+                <td>Tocurency</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="num" id="M" placeholder="so_tien_muon_doi"></td>
+                <td>
+                    <select name="Country1" id="Country1">
+                    <option value="VND" id="a">VND</option>
+                    <option value="USD" id="b">USD</option>
+                    </select>
+                </td>
+                <td><select name="Country2" id="Country2">
+                    <option value="VND" id="a">VND</option>
+                    <option value="USD" id="b">USD</option
+                    ></select>                   
+                </td>
+                <td><button  type="button" onclick="convert()">Convert</button></td>
+            </tr>
+        </table>
+        <p id="ketqua"></p>
+    </form>
+</body>
+<script>
+    function convert(){
+        var x =document.getElementById('M').value;
+        var y =document.getElementById('Country1').value;
+        var z =document.getElementById('Country2').value;
+        x =parseInt(x)
+        var kq =0
+        if (y==z){
+            kq=x
+        }else if(y ==a && z==b ){
+            kq=x/23000
+        }else {
+            kq=x*23000
+        }
+        document.getElementById('ketqua').innerHTML = kq
+    }
+</script>
+</html>
