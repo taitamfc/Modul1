@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+
+    function click_me() {
+
+        var so = document.getElementById('sothang').value
+        so = parseInt(so)
+        switch (so) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById('ngay').innerHTML = ('co 31 ngay');
+                break;
+            case 2:
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById('ngay').innerHTML = ('co28 hoac29 ngay');
+                break;
+            default:
+            document.getElementById("ngay").innerHTML = 'nhap thang sai'
+                break;
+
+        }
+    }
+</script>
+
+<body>
+
+    <form action="">
+
+
+        <input type="text" id="sothang">
+        <button onclick="click_me()" type="button" id="thang">Tính số ngày</button>
+        <p id="ngay"></p>
+
+
+
+    </form>
+
+</body>
+</html>
