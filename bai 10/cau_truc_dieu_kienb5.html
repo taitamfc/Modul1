@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var mediumScore = parseInt(prompt('nhập dierm tb cua các bai kierm tra!'));
+    var midtermExamScore =parseInt(prompt('nhập diểm thi giữa kì!'));
+    var finalExamScore = parseInt(prompt('nhập ddierm thi cuối kì'));
+    var  medium = ( mediumScore + midtermExamScore + finalExamScore)/3;
+    if (medium>=8){
+document.write ('học sinh giỏi');
+    }else if(medium >= 5 && medium < 8 ){
+        document.write('hoc sinh kha');
+    }else{
+        document.write('Học lực kém!! cần cố gắng');
+    }
+</script>
+<body>
+
+</body>
+</html>

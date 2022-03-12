@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var minuteCall = parseInt(prompt('nhập số phut gọi của tháng này!'));
+    var money = 0; 
+    var amountPerMinute;
+    if (minuteCall >= 100) {
+        amountPerMinute = 1190;
+        money =minuteCall *amountPerMinute;
+        document.write('tiền cước của bạn là:' + money);
+    }else{
+        amountPerMinute = 1500;
+        money = minuteCall * amountPerMinute ;
+        document.write('tiền cước của bạn là: '+ money);
+    }
+</script>
+<body>
+    
+
+</body>
+</html>

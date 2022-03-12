@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var totalCar =parseInt(prompt('tháng này bạn bán dc bao nhiêu chiedc xe?'))
+    var rose =0
+    if (totalCar >= 5){
+        rose = totalCar / 100 *500000000;
+        document.write('Bạn dược hưởng 1% doanh thu là:' + rose);
+        console.log(rose)
+    }else if (totalCar >= 1 && totalCar < 5){
+        rose = totalCar / 200* 500000000;
+        console.log(rose)
+        document.write('Bạn dược hưởng 0.5% doanh thu là:' + rose);
+    }else{
+        document.write('Bạn chỉ nhận lương cơ bản ,Bạn cần cố gắng thêm :3')
+    }
+</script>
+<body>
+
+</body>
+</html>
