@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <script>
-    var a =parseInt(prompt(''))
-    var b =parseInt(prompt(''))
-    var c =parseInt(prompt(''))
+    var a =parseInt(prompt('nhap số a'));
+    var b =parseInt(prompt(' nhập số b'));
+    var c =parseInt(prompt('nhập số c'));
     var total = b*b-4*a*c
     if (total <0){
     document.write(' phương trình vô ngiệm');
@@ -17,9 +17,9 @@
         var x = -b/(2*a)
         document.write('phương trình  có nghiệm kép =' +x)
     }else {
-        var x1 =(-b + 'canbac2total')/(2*a )  ;
-        var x2 = (-b - 'canbac2total')/(2*a )  ;
-        document.write('phương trinh có ngiệm là' x1, x2 )
+        var x1 =(-b + Math.sqrt(total))/(2*a )  ;
+        var x2 = (-b - Math.sqrt(total))/(2*a )  ;
+        document.write('phương trinh có ngiệm là:' + x1, 'và' + x2)
     }
 </script>
 <body>

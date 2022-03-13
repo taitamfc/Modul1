@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var kWh =parseInt(prompt('nhập số điện đã dùng(tinh bằng kW/h)'))
+    var thanhtien = 0
+    
+    if (kWh >= 0 && kWh <= 50){
+    thanhtien  = kWh*1678;
+    var gtgt = thanhtien*8/100;
+    var total = gtgt + thanhtien
+    document.write('Tiền điện tháng này là ' +total + 'đ');
+    }else if(kWh>50 && kWh <= 100){
+    thanhtien = kWh*1734;
+    var gtgt = thanhtien*8/100;    
+    var total = gtgt + thanhtien
+    document.write('Tiền điện tháng này là ' +total + 'đ');
+    }else if(kWh >100 && kWh<= 200){
+        thanhtien = kWh*2014;
+    var gtgt = thanhtien*8/100;
+    var total = gtgt + thanhtien
+    document.write('Tiền điện tháng này là ' +total + 'đ');
+    }else if(kWh>200 && kWh<=300){
+    thanhtien = kWh*2536;
+    var gtgt = thanhtien*8/100;    
+    var total = gtgt + thanhtien
+    document.write('Tiền điện tháng này là ' +total + 'đ');
+    }else if(kWh>300 && kWh<400){
+        thanhtien = kWh*2834;
+    var gtgt = thanhtien*8/100;    
+    var total = gtgt + thanhtien
+    document.write('Tiền điện tháng này là ' +total + 'đ');
+    }else {
+        thanhtien = kWh*2972;
+    var gtgt = thanhtien*8/100;    
+    var total = gtgt + thanhtien
+    document.write('Tiền điện tháng này là ' +total + 'đ');
+    }
+
+  
+    </script>
+<body>
+    
+</body>
+</html>
