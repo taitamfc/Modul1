@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +8,28 @@
     <title>Document</title>
 </head>
 <script>
-    var tong=0;{
-    while (tong<20)
-    for(var i=1; i<=100; i++){
-        var sum=0;
-        for(var j=1; j<i; j++){
-            if(i%j==0){
+    var tong = 0;
+    var start = 2;
+    while (tong <= 20) {
+
+
+        var sum = 0;
+        for (var j = 1; j < start; j++) {
+            if (start % j == 0) {
                 sum++;
             }
         }
-        if(sum==1){
+        if (sum == 1) {
             tong++;
+            document.write(start + ' la so nguyen to' + '<br>');
         }
-            document.write(i+' la so nguyen to'+'<br>');
-        }
+
+        start++
     }
 </script>
+
 <body>
-    
+
 </body>
+
 </html>

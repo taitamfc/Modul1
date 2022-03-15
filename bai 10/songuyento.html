@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<script>
-    var i = 1, tong = 0;
-    while (tong < 20) {
-        var sum = 0, j = 1;
-        while (j < i) {
-            if (i % j == 0) {
-                sum++;
+    <script>
+        var i = 1, tong = 0;
+        while (tong < 20) {
+            var sum = 0, j = 1;
+            while (j < i) {
+                if (i % j == 0) {
+                    sum++;
+                };
+                j++;
             };
-            j++;
+            if (sum == 1) {
+                document.write(i + ' la so nguyen to' + '<br>');
+                tong++;
+            };
+            i++;
         };
-        if (sum == 1) {
-            document.write(i + ' la so nguyen to' + '<br>');
-            tong++;
-        };
-        i++;
-    };
-</script>
+    </script>
 <body>
     
 </body>
