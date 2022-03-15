@@ -13,6 +13,38 @@
             document.write('*')
         } document.write('</br>')
     }
+    document.write('</br>')
+    for(var i=1;i<=5;i++) {
+        for(var j=1;j<=5;j++){
+            if(j>i){
+                document.write( "&nbsp&nbsp")  
+            }else if(j<=i){
+            document.write('*')
+        }
+        }document.write('</br>')
+    }
+    document.write('</br>')
+
+
+    for(var i=5;i>=1;i--) {
+        for(var j=5;j>=1;j--){
+            if(j>i){
+                document.write( "&nbsp&nbsp")  
+            }else if(j<=i){
+            document.write('*')
+        }
+        }document.write('</br>')
+    }
+    for(var i=1;i<=5;i++) {
+        for(var j=5;j>=1;j--){
+            if(j<i){
+                document.write( "&nbsp&nbsp")  
+            }else if(j>=i){
+            document.write('*')
+        }
+        }document.write('</br>')
+    }
+   
 </script>
 
 <body>
