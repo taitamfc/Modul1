@@ -23,6 +23,7 @@
             document.write('*')
         } document.write('</br>')  
     }
+<<<<<<< HEAD
     for (j = 1; j <= 5; j++) {
         for (i = 1; i <= j; i++) {
             document.write('*')
@@ -31,6 +32,40 @@
        
     }
 
+=======
+    document.write('</br>')
+    for(var i=1;i<=5;i++) {
+        for(var j=1;j<=5;j++){
+            if(j>i){
+                document.write( "&nbsp&nbsp")  
+            }else if(j<=i){
+            document.write('*')
+        }
+        }document.write('</br>')
+    }
+    document.write('</br>')
+
+
+    for(var i=5;i>=1;i--) {
+        for(var j=5;j>=1;j--){
+            if(j>i){
+                document.write( "&nbsp&nbsp")  
+            }else if(j<=i){
+            document.write('*')
+        }
+        }document.write('</br>')
+    }
+    for(var i=1;i<=5;i++) {
+        for(var j=5;j>=1;j--){
+            if(j<i){
+                document.write( "&nbsp&nbsp")  
+            }else if(j>=i){
+            document.write('*')
+        }
+        }document.write('</br>')
+    }
+   
+>>>>>>> 08349199dd0526a19c1e83fc2354b673f463a926
 </script>
 
 <body>
