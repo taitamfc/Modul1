@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let A = [];
+    let x = 0
+    function add1() {
+        A[x] = document.getElementById("name").value
+        //    alert('giatri' + A[x]) +'them vao' +x)
+        x++
+        document.getElementById("name").value = ""
+    }
+    function display() {
+        let e = "<hr/>"
+        for (i = 0; i < A.length; i++) {
+            e += A[i] + '</br>'
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+
+</script>
+
+<body>
+
+    <h3>Sample Screen</h3>
+</body><br>
+<input type="text" id="name">
+<button id="btnadd" value="add" onclick="add1() ">Add</button>
+<button id="btndisplay" value="disp" onclick="display()">Display</button>
+<div id="result"></div>
+</body>
+
+</html>
