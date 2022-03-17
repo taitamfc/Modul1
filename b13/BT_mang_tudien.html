@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var English = ['go', 'play', 'game', 'table', 'behight', 'lefght', 'right'];
+    var Tiengviet = ['đi', 'chơi', 'trò chơi', 'bàn', 'sau', ' trái', ' phải'];
+
+
+    let score = -1
+    function check() {
+
+        var a = document.getElementById('name').value;
+
+        for (let i = 0; i < English.length; i++) {
+            if (a == English[i]) {
+                score = i
+            }
+            console.log(score)
+        }
+        if (score != -1) {
+            document.getElementById('show').innerHTML = Tiengviet[score]
+        } else {
+            document.getElementById('show').innerHTML = 'Khongtimthay'
+        }
+    }
+</script>
+
+<body>
+    <input id="name" type="text">
+    <button onclick="check()">TRa Cứu</button>
+    <div id="show"></div>
+</body>
+
+</html>
