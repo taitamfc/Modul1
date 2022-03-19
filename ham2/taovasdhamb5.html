@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="seach()" >
+    <p id="star"></p>
+</body>
+<script>
+    var Star =["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" ,"Regulus"]
+    var Constellation =["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major ", "Leo"]
+    function seach(){
+        var name =toString(prompt('nhap ten ngoi sao'))
+        
+        var index=-1
+        for(i in Star){
+            if(name=== Star[i]) {
+                index=i
+             console.log(index)
+            }   
+        // for(j in Constellation){
+        //             if(j==index){
+                        
+                    // }
+                // }
+            
+            // else{alert('k co chom sao tuong ung')}
+          
+        } alert(Constellation[index])
+    }
+</script>
+</html>
