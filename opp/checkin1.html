@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var Student = function (name, age, masv, class_name) {
+            this.name = name
+            this.age = age
+            this.masv = masv
+            this.class_name = class_name
+
+            this.getname = function () {
+                return this.name
+            };
+            this.getage = function () {
+                return this.age
+            }
+            this.getmasv = function () {
+                return this.masv
+            }
+            this.getclass_name = function () {
+                return this.class_name
+            };
+
+            this.setname = function (new_name) {
+                this.name = new_name
+            };
+            this.setage = function (new_age) {
+                this.age = new_age
+            };
+            this.setmasv = function (new_masv) {
+                this.masv = new_masv
+            };
+            this.setclass_name = function (new_class_name) {
+                this.class_name = new_class_name
+            };
+            this.GetInfor=function(){
+                console.log(this.name)
+                console.log(this.age)
+                console.log(this.masv)
+                console.log(this.class_name)
+            }
+
+        }
+        var Hs1=new Student('Công tằng tôn nữ',27,'A45','C02222h1')
+        console.log(Hs1)
+       console.log( Hs1.getname())
+       console.log( Hs1.getage())
+       console.log( Hs1.getmasv())
+       console.log( Hs1.getclass_name())
+       console.log( '+++++++++++++++++++++++++++++++++')
+        Hs1.setage(30)
+        Hs1.setname('Bóng ma vật vờ')
+        Hs1.setmasv('C0vit')
+        Hs1.setclass_name('Âm phủ')
+        console.log(Hs1)
+        console.log( '+++++++++++++++++++++++++++++++++')
+        Hs1.GetInfor()
+
+
+
+    </script>
+</body>
+
+</html>
