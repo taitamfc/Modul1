@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Objects</title>
+</head>
+
+<body>
+  <div id="img move"></div>
+
+</body>
+<script>
+  function oto(image, top, left, size) {
+    this.image = image;
+    this.top = top;
+    this.left = left;
+    this.size = size;
+    this.getoto = function () {
+      return '<img width="' + this.size + '"' +
+        ' height="' + this.size + '"' +
+        ' src="' + this.image + '"' +
+        ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />'
+    }
+    this.moveright = function () {
+      this.left += 20
+      console.log('moveright' + this.left)
+    }
+  }
+  var mesedes = new oto('oto.jpg', 20, 30, 100)
+  function run() {
+    if (mesedes.left < window.innerWidth - mesedes.size) {
+      mesedes.moveright()
+    }
+    document.getElementById("img move").innerHTML = mesedes.getoto()
+    setTimeout(run, 300)
+  }
+  run()
+</script>
+
+</html>

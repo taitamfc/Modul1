@@ -15,7 +15,7 @@
             <td id="pin">100%</td>
         </tr>
         <tr>
-            <td colspan="3" style="width: 50px; height: 30;"><input type="text" id="text" onclick=" xuly_tn"></td>
+            <td colspan="3" style="width: 50px; height: 30;"><input type="text" id="text"></td>
         </tr>
 
 
@@ -38,6 +38,8 @@
     </table>
 </body>
 <script>
+    var send_msg = []
+    var save_msg = []
     var send = ''
     var save = ''
     var Nokia = function (battery, msger, memory1, memory2) {
@@ -74,8 +76,11 @@
         }
         this.savemsg = function () {
             save = document.getElementById('text').value
+            save_msg.push(save_msg)
             alert('da luu msg')
+            console.log(save_msg)
             document.getElementById('text').value = ''
+
             this.battery--
             document.getElementById('pin').innerHTML = this.battery
         }
@@ -83,18 +88,23 @@
             send = document.getElementById('text').value
             alert('mesenger da gui')
             document.getElementById('text').value = ''
+
             this.battery--
             document.getElementById('pin').innerHTML = this.battery
         }
         this.sacnhanh = function () {
-            parseFloat(this.battery)+=10
+            this.battery += 10
             alert(' dang sac' + this.battery)
             document.getElementById('pin').innerHTML = this.battery
         }
         this.msg_daluu = function () {
-            document.getElementById('text').innerHTML = save
+            for(i in save_msg){
+          console.log(save_msg[i])  
+            document.getElementById('text').innerHTML = save_msg[i]
+        }    
         }
         this.msg_dagui = function () {
+            
             document.getElementById('text').innerHTML = send
         }
 
@@ -119,10 +129,10 @@
         iphone.chargging()
     }
     function nut7() {
-        iphone.msg_daluu()
+        iphone.msg_dagui()
     }
     function nut8() {
-        iphone.msg_dagui()
+        iphone.msg_daluu()
     }
     function nut9() {
         iphone.sacnhanh()
