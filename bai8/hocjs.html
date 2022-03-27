@@ -12,20 +12,12 @@
 <body>
 
     <script>
-    
-        function kiemtra(a) {
-            if (kiemtra % 2 == 0) {
-                return true;
-            } else {
-                return false;
-            }
+        var number = prompt('enternumber')
+        function kiemtra(x) {
+            return number % 2 == 0
         }
-        var result = kiemtra(5);
-        if (result == true) {
-            console.log('so chan')
-        } else {
-            console.log('so le')
-        }
+        var result = kiemtra(number)
+        result == true ? console.log(number + 'la so chan') : console.log(number + ' la so le')
     </script>
 </body>
 
