@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile</title>
+    <style>
+        .mobile {
+            width: 400px;
+            border: 1px solid gray;
+            /* position: relative; */
+            display: inherit;
+            float: left;
+            margin-right: 20px;
+        }
+
+        textarea {
+            display: block;
+            width: 90%;
+            padding: 10px 0px;
+            margin: 10px 10px;
+        }
+
+        div.name {
+            text-align: center;
+        }
+
+
+
+        input {
+            width: 230px;
+            margin-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        let Mobile = function (name,type,status) {
+            this.name = name;
+            this.type= type;
+            this.type2= "";
+            this.msg = "";
+            this.inbox = [];
+            this.outbox = [];
+            this.status = status;
+            this.setEnergy = function (energy) {
+                this.energy = energy;
+            }
+            this.getEnergy = function () {
+                return this.energy;
+            }
+            this.decreaseEnergy = function () {
+                if(this.energy>0)
+                    this.energy--;
+            }
+            this.chargeEnergy = function () {
+                if(this.energy <=95)
+                    this.energy+=5;
+                else
+                    this.energy = 100;
+
+            }
+
+            this.turnOff = function () {
+                    this.status = false;
+            }
+            this.turnOn = function () {
+                if (this.getEnergy() >0)
+                    this.status = true;
+
+            }
+            this.getStatus = function () {
+                return this.status;
+            }
+
+            this.getType2 = function () {
+                return this.type2;
+            }
+            this.setType2 = function (type2) {
+                this.type2 = type2;
+            }
+            this.getName = function () {
+                return this.name;
+            };
+            this.setName = function (name) {
+                this.name = name;
+            };
+            this.writeMsg = function (value) {
+                this.msg = value;
+            };
+            this.sendMsg = function (mobile) {
+                this.outbox.push(this.msg);
+                mobile.receiveMsg(this.msg);
+                this.msg = "";
+            };
+            this.receiveMsg = function (msg) {
+                this.inbox.push(msg);
+            };
+
+            this.draw = function () {
+                let html = `<div class="mobile">
+            <div class="name" id="${this.type}-name">name</div>
+            <textarea id="${this.type}-inbox" class="inbox" disabled placeholder="Inbox"></textarea>
+            <textarea id="${this.type}-outbox" class="outbox" disabled placeholder="Outbox"></textarea>
+            <input id="${this.type}-msg" class="msg" placeholder="message..." oninput="${this.type}.writeMsg(this.value)">
+            <button type="button" onclick="sendMsg(${this.type},${this.type2})">Send</button>
+            <button type="button" onclick="onOff(${this.type})">ON/OFF</button>
+            <input id="${this.type}-pin"  style="width: 100px" disabled ></input>
+            <input id="${this.type}-status"  style="width: 175px" disabled ></input>
+            <button type="button" onclick="charge(${this.type})">Charge</button>
+            </div>`;
+                return html;
+            }
+
+        };
+
+        function sendMsg(mobile1,mobile2){
+            if(mobile1.getEnergy() >0 && mobile1.status==true ) {
+                mobile1.sendMsg(mobile2);
+                if (mobile1.getEnergy()>0)
+                    display(mobile1);
+                if(mobile2.getEnergy())
+                    display(mobile2);
+                mobile1.decreaseEnergy();
+                mobile2.decreaseEnergy()
+            } 
+            if (mobile1.getEnergy()==0) {
+                display(mobile1);
+                mobile1.status = false;
+            }
+            if(mobile1.status == false) {
+                display(mobile1);
+            }
+
+        }
+        function onOff(mobile) {
+            if (mobile.status)
+                mobile.turnOff();
+            else
+                mobile.turnOn();
+            display(mobile);
+        }
+        function charge(mobile) {
+            mobile.chargeEnergy();
+            document.getElementById(mobile.type+"-pin").value = "Pin: "+ mobile.getEnergy()+ " /100"
+        }
+
+        function display(mobile) {
+            document.getElementById(mobile.type+"-name").innerHTML  = mobile.name;
+            document.getElementById(mobile.type+"-inbox").value = mobile.inbox;
+            document.getElementById(mobile.type+"-outbox").value = mobile.outbox;
+            document.getElementById(mobile.type+"-pin").value = "Pin: "+ mobile.getEnergy()+ " /100";
+            if (mobile.status)
+                document.getElementById(mobile.type+"-status").value = "Dien thoai dang bat";
+            else
+                document.getElementById(mobile.type+"-status").value = "Dien thoai dang tat";
+            document.getElementById(mobile.type+"-msg").value = "";
+            document.getElementById(mobile.type+"-msg").focus();
+        }
+
+
+            let iphone = new Mobile("7 plus", "iphone", true);
+            let samsung = new Mobile("Note 7", "samsung", true);
+            iphone.setEnergy(30);
+            samsung.setEnergy(40);
+            iphone.setType2(samsung.type);
+            samsung.setType2(iphone.type);
+            document.body.innerHTML += iphone.draw();
+            document.body.innerHTML += samsung.draw();

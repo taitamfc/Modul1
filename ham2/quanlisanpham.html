@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        input{
+            margin-top: 10px;
+            margin-left: 10px;
+            border-radius: 5px;
+            
+        }
+        #menu{
+            background-color: #f2f2f2;
+            width: 300px;
+            padding: 25px 25px
+        }
+        button{
+            background-color: #50af50;
+            color: white;
+            border-radius: 5px;
+        }
+</style>
+<body>
+    
+        <div id="menu">
+            <input type="text" id="addproduct" placeholder="New product">
+            <button type='button' onclick="add()" >add</button>
+            <br><br>
+        </div>
+    
+    <h3 >Display All Product</h3>
+    <div id=ListProduct ></div>
+
+    
+        </tr>
+    </table> 
+</body>
+<script>
+    var ListProduct = ['iPhone 13 Pro Max',
+        'Samsung Galaxy S21 Ultra',
+        'Samsung Galaxy Note 20 Ultra',
+        'iPhone 13 Pro',
+        'Xiaomi Mi 11',
+        'Samsung Galaxy S21 FE',
+        'OnePlus 9 Pro',
+        'Xiaomi Redmi Note 10 Pro',
+        'Poco X3 Pro',
+        'Oppo Find X3 Pro',
+        'Samsung Galaxy S21']
+    // let ListProduct=['iPhone 13 Pro Max','Samsung Galaxy S21 Ultra']
+    function hienthidanhsach() {
+        var drawTable = "<table><tr><th colspan='2'>Product Name</th><th id='amoutProduct'>" + ListProduct.length +
+            "products</th></tr>"
+        for (var i = 0; i < ListProduct.length; i++) {
+            drawTable += '<tr>'
+                + '<td>' + ListProduct[i] + "</td>"
+                + '<td><button  value="Edit" onclick="editproduct(' + i + ')">edit</button></td>'
+                + '<td><button  value="Delete" ondblclick=" deleteproduct(' + i + ')">delete</button></td>'
+            drawTable += '</tr>'
+        }
+        drawTable += "</table>"
+        document.getElementById('ListProduct').innerHTML = drawTable
+    }
+    function editproduct(edit) {
+        var newname = prompt('nhap ten de sua')
+
+        ListProduct[edit] = newname
+        hienthidanhsach();
+    }
+    function deleteproduct(deleted) {
+
+        ListProduct.splice(deleted, 1);
+        hienthidanhsach();
+    }
+    function add() { 
+        var newproduct = document.getElementById('addproduct').value
+        ListProduct.push(newproduct);  
+        hienthidanhsach();
+    }
+hienthidanhsach();
+</script>
+
+</html>

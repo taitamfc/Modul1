@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="Newproduct" placeholder="New product">
+        <button type="button" onclick="add()">Add</button>
+    </div>
+
+    <h3>Display All Product</h2>
+        <div id="Show"></div>
+
+        <!-- <table>
+        <tr>
+            <th>product Name</th><th></th>
+        </tr> -->
+        <!-- "<table border="2" style="width: 250px; background-size: cover ; background-image: url(../ham2/hinh.JPG);" ><tr><th colspan='2'>Product Name</th><th id='amoutProduct'>" + ListProduct.length + -->
+        <!-- "products</th></tr>" -->
+        </table>
+</body>
+<script>
+
+    var ListProduct = ['I phone10', 'Iphone 11']
+    function hienthidanhsach() {
+        var Table = "<table border='2' style='width: 250px; background-size: cover ; background-image: url(../ham2/hinh.JPG);' ><tr><th colspan='2'>" + ListProduct.length +
+            "products</th></tr>"
+        for (var i = 0; i < ListProduct.length; i++) {
+            Table += '<tr>'
+                + '<td>' + ListProduct[i] + '</td>'
+                + '<td><button onclick="edit(' + i + ')">Edit</button></td>'
+                + '<td><button onclick="deleteproduct(' + i + ')">Delete</button></td>'
+        }
+        Table += '</table>'
+        document.getElementById('Show').innerHTML = Table
+
+
+    } hienthidanhsach()
+    function add() {
+        var newproduct = document.getElementById("Newproduct").value
+        ListProduct.push(newproduct)
+        hienthidanhsach()
+    }
+    function deleteproduct(deleted) {
+
+        ListProduct.splice(deleted)
+        hienthidanhsach()
+    }
+
+
+
+</script>
+
+</html>

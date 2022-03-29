@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <label>Feet</label>
+        <input id="inputFeet" type="number" placeholder="Fteet"
+               oninput="footToMeter(value)" 
+               onchange="footToMeter(value)">
+    </p>
+    <p>Celsius: <span id="Meeter"></span></p>
+    <p>
+        <label>Meeter</label>
+        <input id="inputMeeter" type="number" placeholder="Meeter"
+               oninput="MeterTofoot(value)" 
+               onchange="MeterTofoot(value)">
+    </p> 
+  <p>Celsius: <span id="Feet"></span></p> 
+</body>
+<script>
+    function footToMeter(foot){
+        foot=parseFloat(foot)
+        document.getElementById('Meeter').innerHTML  = 0.305 * foot
+    }
+
+function MeterTofoot(meter){
+meter= parseFloat(meter)
+document.getElementById('Feet').innerHTML = 3.279 * meter }
+
+</script>
+</html>

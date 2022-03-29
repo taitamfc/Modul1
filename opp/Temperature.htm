@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>hoom nay 25  độ Tương đương</p>
+    <p id="dof"></p>độ f  <br>
+    <p id="dok"></p> dộ Kenvin
+</body>
+<script>
+    var Temperature= function(do_c){
+        this.do_c=do_c;
+        this.doF=function(){
+            return   9/5 * this.do_c + 32
+        }
+        this.doK=function(){
+            return this.do_c + 273.15
+        }
+    }
+    var doc= new Temperature(25)
+    console.log(doc.do_c)
+    console.log(doc.doF())
+    console.log(doc.doK())
+    document.getElementById('dof').innerHTML=doc.doF()
+    document.getElementById('dok').innerHTML= doc.doK()
+
+
+</script>
+</html>

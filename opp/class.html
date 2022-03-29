@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Mydate {
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+
+        }
+        getday() {
+            return this.day
+        }
+        getmonth() {
+            return this.month
+         }  
+           getyear(){
+                return this.year
+        }
+        setday(new_day){
+            this.day=new_day
+
+        }
+        setmonth(new_month){
+            this.month=new_month
+        }
+        setyear(new_year){
+            this.year=new_year
+        
+        }
+        getInFor(){
+            alert('ngay /'+this.day+'thang /'+this.month+'nam /'+this.year)
+        }
+       
+    }
+    var date1= new Mydate(02,02,2002)
+    console.log(date1)
+    console.log(date1.getInFor())
+</script>
+
+</html>

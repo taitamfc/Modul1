@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let mobile = function (name, messeger, inbox, battery, Outbox, status) {
+        this.name = name;
+        this.messeger = messeger
+        this.hopthuden = [];
+        this.battery = battery;
+        this.hopthudi = []
+        this.status = status
+        this.setbbattery = function (battery1) {
+            this.battery = battery1
+        }
+        this.getbattery = function () {
+            return this.battery
+            this.pintieuhao = function () {
+                if (this.battery > 0) {
+                    this.battery--
+                }
+            }
+        }
+        this.charge = function () {
+            if (this.battery < 95) {
+                this.battery + 5
+            } else if (this.battery >= 100) {
+                alert('pin đầy rồi!sạc nữa nổ à')
+            }
+        }
+        this.off = function () {
+            this.status = false
+        }
+        this.on = function () {
+            if (this.battery > 0) {
+                this.status = true
+            }
+
+        }
+        this.getname = function () {
+            return this.name
+        }
+        this.setname = function (newname) {
+            this.name = newname
+        }
+        this.writemsg = function (newmsg) {
+            this.messeger = newmsg
+            this.hopthudi.push(this.messeger)   
+        }
+        this.gethopthudi=function(savemsg){
+         for(i in gethopthudi){
+             return this.hopthudi[i]
+         }
+
+        }
+        this.sendmsg=function(){
+            this.ou
+
+        }
+    }
+</script>
+
+</html>

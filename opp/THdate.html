@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var MyDate = function (day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+
+        this.getDay = function () {
+            return this.day
+        };
+        this.getMonth = function () {
+            return this.month
+        };
+        this.getYear = function () {
+            return this.year
+        };
+        this.setDay = function (new_day) {
+            this.day = new_day
+        };
+        this.setMonth = function (new_month) {
+            this.month = new_month
+        };
+        this.setYear = function (new_year) {
+            this.year = new_year
+            this
+        };
+        this.toString= function(){
+            
+            console.log('ngay '+this.day+''+' thang '+this.month+' nam '+ this.year)
+        }
+    }
+    var date1=new MyDate(02,02,2007)
+    console.log(date1)
+    var day=date1.getDay();
+    var month=date1.getMonth();
+    var year= date1.getYear();
+    alert(day + "/" + month + "/" + year);
+    console.log(",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,")
+    date1.setDay(10);
+    date1.setMonth(10);
+    date1.setYear(2009)
+    console.log(date1)
+    console.log(",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,")
+    date1.toString()
+</script>
+
+</html>

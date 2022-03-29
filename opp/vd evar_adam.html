@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    Apple
+    =================
+    weight: int
+    =================
+    Apple() => constructor()
+    decrease(): void: không trả về, thực thi
+    isEmpty(): boolean: trả về giá trị thuộc kiểu boolean
+    getWeight(): int
+    */
+​
+    class Apple {
+        //Apple()
+        constructor(){
+            this.weight = 0;
+        }
+        decrease(){
+​
+        }
+        isEmpty(){
+            return false;
+        }
+​
+        getWeight(){
+            return this.weight;
+        }
+    }
+    /*
+    Human
+    =================
+    name: String
+    gender: boolean
+    weight: int
+    =================
+    Human() => constructor()
+    isMale(): boolean
+    setGender(boolean): void
+    checkApple( Apple ): boolean
+    eat( Apple ): void
+    getName(): String
+    setName(ts_name): void
+    */
+    class Human {
+        //Human()
+        constructor(){
+            this.name = '';
+            this.gender = false;
+            this.weight = 0;
+        }
+        isMale(){
+            return false;
+        }
+        setGender( ts_gender ){
+            this.gender = ts_gender;
+        }
+​
+        checkApple( ts_objApple ){
+​
+            //ts_objApple có giá trị là gì ? => objApple
+            return false;
+        }
+        eat( ts_objApple ){
+​
+        }
+        say( ts_say ){
+​
+        }
+        getName(){
+            return this.name;
+        }
+        setName(ts_name){
+            this.name = ts_name;
+        }
+        getWeight(){
+            return this.weight;
+        }
+        setWeight(ts_weight){
+            this.weight = ts_weight;
+        }
+    }
+​
+    //tạo ra đối tượng Apple
+    var objApple = new Apple();
+​
+    var objHuman = new Human();
+    objHuman.checkApple( objApple );
+</script>
+</html>
