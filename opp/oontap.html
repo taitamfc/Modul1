@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    </select>
+    <script>
+
+function gradingStudents(grades) {
+            var newArr = [];
+            for (var i = 0; i < grades.length; i++) {
+                var number_Arr = [];
+
+                var devided10 = (grades[i] / 10);//'8.3'
+                var sArr = devided10.toString().split('.');//[8,3]
+
+                var checkNumber = sArr[1];//3
+                checkNumber = parseInt(checkNumber);//3
+
+                number_Arr[0] = parseInt(sArr[0]);//[8]
+
+                if (checkNumber > 5) {
+                    if ((10 - checkNumber) < 3) {
+                        var sumBT = checkNumber + (10 - checkNumber);
+                        if (sumBT == 10) {
+                            number_Arr[0] += 1;
+                            sumBT = 0;
+                        }
+                        number_Arr[1] = sumBT
+                    } else {
+                        number_Arr[1] = checkNumber;
+                    }
+                }
+
+                if (checkNumber < 5) {
+                    if ((5 - checkNumber) < 3) {
+                        var sumBT = checkNumber + (5 - checkNumber);//5
+                        // if (sumBT == 10) {
+                        //     number_Arr[0] += 1;
+                        //     sumBT = 0;
+                        // }
+                        number_Arr[1] = sumBT;//[8,5]
+                    } else {
+                        number_Arr[1] = checkNumber;
+                    }
+                }
+
+                var newNumber = number_Arr.join('');//85
+                newNumber = parseInt(newNumber);//85
+                if (newNumber < 40) {
+                    newArr.push(grades[i]);
+                } else {
+                    newArr.push(newNumber);
+                }
+            }
+            return newArr;
+        }
+
+    </script>
+</body>
+
+</html>

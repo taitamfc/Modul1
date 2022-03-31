@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var grades = [
+        68, 129, 73,67,38,33,4,14
+
+    ]
+
+    function gradingStudents(grades) {
+        var boiso
+        var sodu
+        for (let i = 0; i < grades.length; i++) {
+            if (grades[i] >= 38 && grades[i] % 5 != 0) {
+                boiso = grades[i]
+                sodu = boiso % 5;
+                if (sodu >= 3) {
+                    grades[i] = grades[i] + (5 - sodu)
+                }
+            }
+        }
+        console.log(grades)
+    }
+    console.log(grades)
+    gradingStudents(grades)
+
+
+</script>
+
+</html>

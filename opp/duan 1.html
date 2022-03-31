@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image: url(/opp/jhdfdg.jpg);
+    }
+    button {
+        width: 70px;
+        height: 70px;
+        border-radius: 30px;
+
+    }
+
+    button {
+        background-color: rgb(85, 113, 241);
+        font-size: 25px;
+    }
+
+    fieldset {
+        border: 10px dotted black;
+  padding: 15px;
+  background: lightblue;
+  background-clip: padding-box;
+        width: 200px;
+    }
+
+    p {
+        font-size: 100px;
+    }
+
+    #vao:hover {
+        background-color: antiquewhite;
+    }
+    .vao1:hover{
+        background-color: brown;
+    }
+</style>
+
+<body >
+    
+    <fieldset>
+        <div class="times">
+            <h1>Chicken player</h1>
+            <button id="start" style="width: auto;" onclick="click_start()">Start</button>
+            <a id="">Point:</a>
+            <input type="text" name="" id="point" value="0">
+            <a>Times:</a>
+            <input id="time" type="text" value="360">
+
+        </div>
+        <div id="game"></div>
+
+    </fieldset>
+    <p id="socantim"></p>
+</body>
+<script>
+    var setTime = function () {
+        var time = document.getElementById('time').value;
+        time--;
+        document.getElementById('time').value = time;
+        if (time > 0 && point >= 100) {
+            alert('You won')
+        } else if (time == 0 && point < 100) {
+            alert('Gameover' + point + 'điểm')
+        }
+    }
+    function click_start() {
+        setInterval(setTime, 1000)
+        show()
+    }
+    function show() {
+        var numberarr = []
+        for (a = 0; a <= 99; a++) {
+            numberarr[a] = a + 1
+        }
+        numberarr.sort(() => Math.random() - 0.5)
+        var index = 0
+        var data = '<table border="0" cellpacing=0 cellpadding=3> '
+        for (var i = 0; i < 5; i++) {
+            data += '<tr>'
+            for (var j = 0; j < 20; j++) {
+                var style = '';
+                if(numberarr[index] < nextNumber){
+                    style = 'background:white';
+                }
+                data += '<td ><button class="vao1"  style="'+style+'" onmousemove="vao()" id="click_button_' + numberarr[index] + '" onclick="click_buton(' + numberarr[index] + ')">' + numberarr[index] + '</button></td>'
+                index++
+            }
+            data += '</tr>'
+        }
+        data += '</table>'
+        document.getElementById('game').innerHTML = data
+    }
+    var nextNumber = 1
+    var point = 0
+    function click_buton(ts_number) {
+        if (nextNumber == ts_number) {
+            document.getElementById('click_button_' + ts_number).style.background = 'white'
+            nextNumber++;
+            point++;
+            document.getElementById('socantim').innerHTML = 'Tim số ' + nextNumber
+            show()
+            document.getElementById('point').value =point
+        } else {
+            document.getElementById('point').value = point
+            alert('game over' + point + ':điểm')
+        }
+    }
+
+</script>
+
+</html>
