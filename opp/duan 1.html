@@ -12,13 +12,9 @@
         background-image: url(/opp/jhdfdg.jpg);
     }
     button {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
         border-radius: 30px;
-
-    }
-
-    button {
         background-color: rgb(85, 113, 241);
         font-size: 25px;
     }
@@ -32,33 +28,55 @@
     }
 
     p {
-        font-size: 100px;
+        font-size: 30px;
     }
 
-    #vao:hover {
+    #mousemove:hover {
         background-color: antiquewhite;
     }
     .vao1:hover{
         background-color: brown;
     }
+    legend{
+        font-size: 30px;
+    }
+    #a1{
+        background-color: blueviolet;
+        font-size: 30px;
+    }
+    #lever{
+        font-size: 20px;
+    }
+    
+    
 </style>
 
 <body >
     
     <fieldset>
+             <legend>Game là Dễ</legend> 
         <div class="times">
-            <h1>Chicken player</h1>
-            <button id="start" style="width: auto;" onclick="click_start()">Start</button>
-            <a id="">Point:</a>
+            
+            <button id="start" style="width: 200px;" onclick="click_start()">Start/Reset</button>
+            <select onchange="lv()" id="lever" >
+                <option value="0">Lever</option>
+                <option value="10">level chicken</option>
+                <option value="30">lever easy</option>
+                <option value="100">lever medium</option>
+                <option value="500">lever difficult</option>
+            </select>
+            <p id="socantim"></p>
+
+            <span id="a1">Point:</span>
             <input type="text" name="" id="point" value="0">
-            <a>Times:</a>
+            <a id="a1">Times:</a>
             <input id="time" type="text" value="360">
 
         </div>
         <div id="game"></div>
 
     </fieldset>
-    <p id="socantim"></p>
+   
 </body>
 <script>
     var setTime = function () {
@@ -75,22 +93,35 @@
         setInterval(setTime, 1000)
         show()
     }
+    var level=0
+    var cot=0
+    var hang=10
+    function lv(){
+        level=document.getElementById('lever').value  
+        if(parseInt(level) >200) {
+            hang=hang+10
+        }
+        cot=level/hang
+        show()
+        click_buton()
+    }
+    console.log(level)
     function show() {
         var numberarr = []
-        for (a = 0; a <= 99; a++) {
+        for (a = 0; a < level; a++) {
             numberarr[a] = a + 1
         }
         numberarr.sort(() => Math.random() - 0.5)
         var index = 0
         var data = '<table border="0" cellpacing=0 cellpadding=3> '
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < hang; i++) {
             data += '<tr>'
-            for (var j = 0; j < 20; j++) {
+            for (var j = 0; j < cot; j++) {
                 var style = '';
                 if(numberarr[index] < nextNumber){
                     style = 'background:white';
                 }
-                data += '<td ><button class="vao1"  style="'+style+'" onmousemove="vao()" id="click_button_' + numberarr[index] + '" onclick="click_buton(' + numberarr[index] + ')">' + numberarr[index] + '</button></td>'
+                data += '<td ><button class="vao1"  style="'+style+'" onmousemove="mousemove()" id="click_button_' + numberarr[index] + '" onclick="click_buton(' + numberarr[index] + ')">' + numberarr[index] + '</button></td>'
                 index++
             }
             data += '</tr>'
@@ -98,6 +129,7 @@
         data += '</table>'
         document.getElementById('game').innerHTML = data
     }
+
     var nextNumber = 1
     var point = 0
     function click_buton(ts_number) {
@@ -108,10 +140,17 @@
             document.getElementById('socantim').innerHTML = 'Tim số ' + nextNumber
             show()
             document.getElementById('point').value =point
+           if((nextNumber--)==level&&time>=0){
+            alert('Perfect!You won'+point+'điểm')
+        }else{
+            alert('You Lost')
+        } 
         } else {
             document.getElementById('point').value = point
             alert('game over' + point + ':điểm')
         }
+        console.log(level)
+        
     }
 
 </script>

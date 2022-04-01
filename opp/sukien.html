@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select onchange="lv()" id="lever" >
+        <option value="10">level chicken</option>
+        <option value="30">lever easy</option>
+        <option value="100">lever medium</option>
+        <option value="500">lever difficult</option>
+    </select>
+</body>
+<script>
+    var level=0
+    function lv(){
+        level=document.getElementById('lever').value
+        sum()
+    }
+
+    function sum(){
+
+        console.log(level)
+    }
+    
+</script>
+</html>
