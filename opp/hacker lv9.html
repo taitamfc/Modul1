@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+</body>
+<script>
+    var s = '12:45:54PM'
+    function timeConversion(s) {
+        let mang1 = s.split(':');
+        mang1[2] = mang1[2].replace('PM', '');
+        mang1[2] = mang1[2].replace('AM', '');
+        
+        var isPM = false
+        var isAM = false
+        if (s.indexOf('PM') != -1) {
+           mang1[0]=parseInt (mang1[0])+12
+           if(mang1[0]==='12')
+        }
+        if (s.indexOf('AM') !=-1) {
+           if (mang1[0]==='12'){
+            mang1[0]='00'
+           }
+        }
+        return mang1.join(':')
+        
+    }
+    
+    timeConversion(s)
+</script>
+
+</html>
